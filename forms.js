@@ -1,72 +1,80 @@
-const form = document.getElementById('form');
+const minus = document.getElementById('dec');
+const plus = document.getElementById('inc');
 
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
+const counter = document.querySelector('[name="number"]');
 
-    const name = document.querySelector('[name="name"]'); // querySelector как css, можно найти по чему угодно
-    const surname = document.querySelector('[name="surname"]'); 
+minus.addEventListener('click', function() {
+    counter.value-- // сокращение =+ то есть минус один
+})
+
+plus.addEventListener('click', function() {
+    counter.value++
+})
+
+
+
+
+
+
+// const form = document.getElementById('form');
+
+// const past = document.querySelector('[name="pass"]')
+
+// form.addEventListener('submit', function (event) {
+    // event.preventDefault();
+
+    
+
+
+
+    // отправлять через инпут можно только через FormData
+
+    // const radio = document.querySelectorAll('[name="radio"]');
+
+    // const radioValue = Array.from(radio)
+    // .find(function(input) {
+    //     return input.checked
+    // })?.value; // ? помогает проверить есть ли элемент в штмл
+
+
+    //const checkbox = document.querySelectorAll('[name="checkbox"]'); 
+    //получили превдомассив, он возвращает нас нод лист
+
+    // const checkboxesValues = Array.from(checkbox)
+    //     .filter(function(input) {
+    //         return input.checked;
+    //     })
+        
+    //     .map(function(input) {
+    //         return input.value; // если выполняется checktd, то дай сюда значения
+    //     })
     
     
-    const formData = {
-        name: name.value,
-        surname: surname.value,
-    }; // функция позволяет нам собирать данные форм
+    // const formData = {
+    //     checkbox: checkboxesValues
+    // }; // функция позволяет нам собирать данные форм
 
-    if (!form.checkValidity()) {    
-        name.setCustomValidity('chfvivf');
-        name.reportValidity();
-    }
+    // const formData = new FormData(form);
+
+    // console.log(Object.fromEntries);
 
 
-    if (form.checkValidity()) {
-        fetch('https://dummyjson.com/products/add', {
-            method: 'post',
-            headers: {
-                'Content-type': 'application/json' //обрабатывай именно вот таким способом
-            },
-            body: JSON.stringify(formData)
-            });
-    } 
-
-}); 
-
-// работает всё кроме отрпавки, event -- выводит то что щас произошло
-
-// entries -- возвращает все значения с formData, но они не отображаются в консоли
-// он псевдомассив
-
-//array.from -- создаёт из псевдомассивов нормальный массив
-//map не подойдёт, тк не может создать новый массив на основе штмл элементов
-
-//есть два типа массивов: один норм, на них можно использовать методы
-// а второй это псевдомассив, возвращает штмл элементы, его можно только перебрать
+    // if (!form.checkValidity()) {    
+    //     name.setCustomValidity('chfvivf');
+    //     name.reportValidity();
+    // }
 
 
-/*
-    Array.form(formData.entries()).forEach(function (pair) {
+    // if (form.checkValidity()) {
+    //     fetch('https://dummyjson.com/products/add', {
+    //         method: 'post',
+    //         headers: {
+    //             'Content-type': 'application/json' //обрабатывай именно вот таким способом
+    //         },
+    //         body: JSON.stringify(formData)
+    //         });
+    // } 
 
-    });
-*/
+// }); 
 
-
-
-// json -- формат данных, джаваскриптовый ОБЪЕКТ, формат json всегда пишутся в двойных кавычках
-//отправили объект, но он превратиться в строку тк это инпуты ! и форма^ на сервер уходит строка
-
-
-
-
-
-
-/* 
-    const formData = new FormData(); // функция позволяет нам собирать данные форм
-
-    formData.append('name', name.value);
-    formData.append('surname', surname.value);
-    
-    fetch('https://dummyjson.com/products/add', {
-    method: 'post',
-    body: formData
-    });
-}); 
-*/
+// джейсон может отправлять только 5 видов значений: число, строка, булево значение, массив, объект
