@@ -5,27 +5,45 @@ buttonSend.addEventListener('click', function() {
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        const name = document.querySelector('[name="name"]');
-        const age = document.querySelectorAll('[name="age"]');
-        const gender = document.querySelectorAll('[name="radio"]');
-        const work = document.querySelector('[name="checkbox"]');
-        const email = document.querySelector('[name="email"]');
-        const password = document.querySelector('[name="password"]');
-        const text = document.getElementById('text');
+        // const name = document.querySelector('[name="name"]');
+        // const age = document.querySelectorAll('[name="age"]');
+        // const gender = document.querySelectorAll('[name="radio"]');
+        // const work = document.querySelector('[name="checkbox"]');
+        // const email = document.querySelector('[name="email"]');
+        // const password = document.querySelector('[name="password"]');
+        // const text = document.getElementById('text');
 
-        const formData = {
-            name: name.value,
-            age: age.value,
-            gender: gender.value,
-            work: work.value,
-            email: email.value,
-            password: password.value
-        };
+    // получили объект со значениями
 
-        const data = JSON.stringify(formData);
-        const parsedData = JSON.parse(data);
 
-        text.innerHTML = parsedData.name;
+    // пустое нечто -- хз что это
+        // const formData = new FormData(form)
+        // const name = formData.get('name'); 
+        // const age = formData.get('age');
+
+
+    // в этом случае получаем пустой массив
+        // const arrayValues = Array.from(formData); 
+
+        /*
+        const arrayValues = Array.from(formData)
+        .filter(function(input) {
+            return this.value != ''
+        })
+        .map(function(input) {
+            return {
+                name: name.value,
+                age: name.value
+            }
+        })
+        console.log(JSON.stringify(arrayValues))
+
+        */
+        
+        // const data = JSON.stringify(formData);
+        // const parsedData = JSON.parse(data);
+
+        // text.innerHTML = parsedData.name;
 
         // const data = JSON.stringify(array)
         // const parsedData = JSON.parse(data);
