@@ -4,47 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="hwForm.css">
 </head>
 <body>
     <div class="form">
-        <div class="title">
+        <div class="form__title">Заполните форму</div>
             <form action="" id="form">
-                Имя
+                <p>Имя</p>
                 <input type="text" name="name">
 
-                <br>
-
-                Возраст
+                <p>Возраст</p>
                 <input type="number" name="age">
 
+                <p>Пол</p>
                 <br>
+                Ж <input type="radio" name="radio" class="form__input-checkbox" value="Ж">
+                М<input type="radio" name="radio" class="form__input-checkbox"  value="М">
 
-                Пол
-                <input type="radio" name="radio">
-                <input type="radio" name="radio">
+                <p>Работаете</p>
+                Да<input type="checkbox" name="checkbox" class="form__input-checkbox" value="Да">
+                Нет<input type="checkbox" name="checkbox" class="form__input-checkbox" value="Нет">
 
-                <br>
-
-                Работаете
-                <input type="checkbox" name="checkbox">
-                <input type="checkbox" name="checkbox">
-
-                <br>
-
-                Электронная почта
+                <p>Электронная почта</p>
                 <input type="email" name="email">
-                Пароль
+
+                <p>Пароль</p>
                 <input type="password" name="password">
-                <button id="password">*</button>
 
                 <br>
                 <button id="send">Отправить</button>
             </form>
-
-            <div id="text"></div>
-        </div>
     </div>
-
+    <div id="text" class="text"></div>
     <script src="hwForms.js"></script>
 </body>
 </html>
